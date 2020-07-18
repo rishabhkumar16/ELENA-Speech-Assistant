@@ -64,7 +64,7 @@ def remove(string):
     return re.sub(pattern, '', string)
 
 def respond(query):
-    if there_exists(['hey','hi','hello','hai']):
+    if there_exists(['hey','hi','hello','hai','hi there']):
         greetings = ["hey, how can I help you", "hey, what's up?", "I'm listening", "how can I help you?","hello"]
         greet = greetings[random.randint(0,len(greetings)-1)]
         speak(greet)
@@ -76,7 +76,7 @@ def respond(query):
         print("Elena: My name is Elena")
         speak("my name is Elena")
 
-    if there_exists(['wikipedia']):
+    if there_exists(['wikipedia','wiki']):
             speak('Searching in wikipedia....')
             query=query.replace("wikipedia", "")
             results=wikipedia.summary(query, sentences=3)
@@ -159,7 +159,7 @@ def respond(query):
         webbrowser.get().open(url_y)
         exit()
 
-    if there_exists(['find location']):
+    if there_exists(['find location','location','open map','open google map','google map','map']):
         print("Elena: Where do you want to go ?")
         speak("Where do you want to go ?")
         location=takeCommand()
