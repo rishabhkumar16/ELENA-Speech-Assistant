@@ -169,7 +169,7 @@ def respond(query):
         speak('Here is what I found')
 
 
-    if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks']):
+    if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks','bye elena']):
         speak("Have a nice day, Good Bye")
         exit()
     else:
