@@ -25,11 +25,15 @@ def speak(audio_string):
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
-        speak("Good Morning")
+        print("Elena: Good Morning Human")
+        speak("Good Morning Human")
     elif hour >=12 and hour < 16:
-        speak("Good Afternoon")
+        print("Elena: Good Afternoon Human")
+        speak("Good Afternoon Human")
     else:
-        speak("Good Evening")
+        print("Elena: Good Evening Human")
+        speak("Good Evening Human")
+    print("Elena: I am Elena")
     speak("I am Elena,")
 
 def takeCommand():
@@ -164,7 +168,20 @@ def respond(query):
         speak('opening visual studio code')
         os.startfile(code_path)
         return
+    if there_exists(['word','ms word']): 
+        speak("Opening Microsoft Word") 
+        os.startfile('C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Word') 
+        return
 
+    if there_exists(['excel','ms excel']): 
+        speak("Opening Microsoft Excel") 
+        os.startfile('C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Excel') 
+        return
+
+    if there_exists(['google chrome','chrome']): 
+        speak("Opening Google Chrome") 
+        os.startfile('C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe') 
+        return
     
     if there_exists(['search on google']):
         print("Elena: What do you want to search ?")
@@ -197,7 +214,7 @@ def respond(query):
         return
 
 
-    if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks','bye elena','get lost']):
+    if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks','bye elena','thanks','get lost','nothing']):
         speak("Have a nice day, Good Bye")
         exit()
     else:
@@ -208,8 +225,10 @@ wishMe()
 c=0
 while(1):
     if c==0:
+        print("Elena: How may I help you\n")
         speak("How may i help you")
     else:
+        print("Elena: Is there anything I can do for you\n")
         speak("Is there anything I can do for you")
     c+=1
     query = takeCommand().lower()
