@@ -1,5 +1,4 @@
 import pyttsx3
-from gtts import gTTS
 import random
 import datetime
 import speech_recognition as sr
