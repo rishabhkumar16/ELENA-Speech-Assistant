@@ -76,6 +76,16 @@ def respond(query):
         print("Elena: My name is Elena")
         speak("my name is Elena")
 
+    if there_exists(["who made you","created you"]): 
+            say = "I have been created by Rishabh Kumar."
+            speak(say) 
+            return
+
+    if there_exists(['who are you','define yourself']):
+        print("Hello, I am Elena. Your personal Assistant. I am here to make your life easier. You can command me to perform various tasks such as searching or opening applications etcetra")
+        speak("Hello, I am Elena. Your personal Assistant. I am here to make your life easier. You can command me to perform various tasks such as searching or opening applications etcetra")
+
+
     if there_exists(['wikipedia','wiki']):
             speak('Searching in wikipedia....')
             query=query.replace("wikipedia", "")
@@ -169,7 +179,7 @@ def respond(query):
         speak('Here is what I found')
 
 
-    if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks','bye elena']):
+    if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks','bye elena','get lost']):
         speak("Have a nice day, Good Bye")
         exit()
     else:
