@@ -68,51 +68,64 @@ def respond(query):
         greetings = ["hey, how can I help you", "hey, what's up?", "I'm listening", "how can I help you?","hello"]
         greet = greetings[random.randint(0,len(greetings)-1)]
         speak(greet)
+        return
 
     if there_exists(["how are you","how are you doing"]):
         speak("I'm very well, thanks for asking")
+        return
 
     if there_exists(["what is your name","what's your name","tell me your name"]):
         print("Elena: My name is Elena")
         speak("my name is Elena")
+        return
 
     if there_exists(["who made you","created you"]): 
-            say = "I have been created by Rishabh Kumar."
-            speak(say) 
-            return
+        say = "I have been created by Rishabh Kumar."
+        speak(say) 
+        return
 
     if there_exists(['who are you','define yourself']):
         print("Hello, I am Elena. Your personal Assistant. I am here to make your life easier. You can command me to perform various tasks such as searching or opening applications etcetra")
         speak("Hello, I am Elena. Your personal Assistant. I am here to make your life easier. You can command me to perform various tasks such as searching or opening applications etcetra")
+        return
 
+    if there_exists(['what are you doing']):
+        speak("I am listening to you.")
+        return
 
     if there_exists(['wikipedia','wiki']):
-            speak('Searching in wikipedia....')
-            query=query.replace("wikipedia", "")
-            results=wikipedia.summary(query, sentences=3)
-            speak("According to Wikipedia")
-            print(results)
-            speak(results)
+        speak('Searching in wikipedia....')
+        query=query.replace("wikipedia", "")
+        results=wikipedia.summary(query, sentences=3)
+        speak("According to Wikipedia")
+        print(results)
+        speak(results)
+        return
 
     if there_exists(['open youtube']):
         speak("opening youtube")
         webbrowser.open("www.youtube.com")
+        return
 
     if there_exists(['open google']):
         speak("opening google")
         webbrowser.open("www.google.co.in")
+        return
 
     if there_exists(['open gmail']):
         speak("opening gmail")
         webbrowser.open("mail.google.com")
+        return
 
     if there_exists(['open facebook']):
         speak("opening facebook")
         webbrowser.open("www.fb.com")
+        return
 
     if there_exists(['open github']):
         speak("opening github")
         webbrowser.open("www.github.com")
+        return
 
     if there_exists(['play music','music','songs','song','play songs']):
         music_dir='E:\\music'
@@ -126,7 +139,8 @@ def respond(query):
     if there_exists(['the time','what\'s the time' ]):
         time=datetime.datetime.now().strftime("%H:%M:%S")
         print(f"Elena: the time is {time}")
-        speak(f"the time is {time}")    
+        speak(f"the time is {time}") 
+        return   
 
     if there_exists(['email','send an email']):
         try:
@@ -138,15 +152,18 @@ def respond(query):
             print(t)
             sendEmail(t, content)
             speak(f"Your email has been sent to {t} successfully")
+            return
         except Exception as e:
             print(e)
             print("\nElena: Sorry, I am unable to send this email. Please try again")
             speak("Sorry, I am unable to send this email. Please try again")
+            return
 
     if there_exists(['open vs code','open visual studio code','visual studio code','vs code']):
         code_path="C:\\Users\\risha\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
         speak('opening visual studio code')
         os.startfile(code_path)
+        return
 
     
     if there_exists(['search on google']):
@@ -177,13 +194,14 @@ def respond(query):
         webbrowser.get().open(url)
         print('Elena: Here is what I found')
         speak('Here is what I found')
+        return
 
 
     if there_exists(['bye','good bye','goodbye','bye bye','exit','quit','no thank you','no','no thanks','bye elena','get lost']):
         speak("Have a nice day, Good Bye")
         exit()
     else:
-        speak("")
+        speak("I don't know that. I will inform my developers to make me familier with this, thank you.")
 
 time.sleep(1)
 wishMe()
