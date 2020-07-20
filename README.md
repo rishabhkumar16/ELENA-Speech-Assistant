@@ -6,7 +6,6 @@
     pip install pyttsx3
     pip install wikipedia
     pip install PyAudio
-    pip install gtts
 ###### (If there is a issue in installing PyAudio then use pip install pipwin and then use pipwin install pyaudio)
 
 ### How to run
