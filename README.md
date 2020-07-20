@@ -6,7 +6,7 @@
     pip install pyttsx3
     pip install wikipedia
     pip install PyAudio
-###### (If there is a issue in installing PyAudio then use pip install pipwin and then use pipwin install pyaudio)
+###### (If there is a issue in installing PyAudio then use "pip install pipwin" and then use "pipwin install pyaudio")
 
 ### How to run
     git clone https://github.com/rishabhkumar16/ELENA.git
