@@ -17,10 +17,11 @@ def there_exists(terms):
     for term in terms:
         if term in query:
             return True
-
+#taking audio string
 def speak(audio_string):
     engine.say(audio_string)
     engine.runAndWait()
+#Greet me command
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
@@ -34,7 +35,7 @@ def wishMe():
         speak("Good Evening Human")
     print("Elena: I am Elena")
     speak("I am Elena,")
-
+#Recognizing commands
 def takeCommand():
     r=sr.Recognizer()
     with sr.Microphone() as source:
@@ -53,7 +54,7 @@ def takeCommand():
         return "None"
     return query
 
-
+#mailing function
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
