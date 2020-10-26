@@ -24,4 +24,4 @@
 - Find Location
 - Exit
 
-https://rishabhkumar16.github.io/
+https://rishabh16.me/
